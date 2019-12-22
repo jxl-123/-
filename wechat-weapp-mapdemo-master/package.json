@@ -1,0 +1,9 @@
+{
+  "name": "wechat-weapp-mapdemo",
+  "version": "0.01",
+  "description": "智能模块眼镜",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

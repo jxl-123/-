@@ -1,0 +1,18 @@
+<button bindtap="openBluetoothAdapter">开始扫描</button>
+<button bindtap="stopBluetoothDevicesDiscovery">停止扫描</button>
+<button bindtap="closeBluetoothAdapter">结束流程</button>
+<view>已发现 {{devices.length}} 个外围设备：</view>
+
+<view v-for="(item,index) in devices" :key="index" bindtap="createBLEConnection(item)"  class="device_item" hover-class="device_item_hover">
+{{item.name}}
+信号强度: {{item.RSSI}}dBm {{Math.max(0, item.RSSI + 100)}}%
+UUID: {{item.deviceId}}
+Service数量: {{item.advertisServiceUUIDs.length}}
+已连接到 {{name}}</view>
+<button v-if="canWrite" size="mini" bindtap="writeBLECharacteristicValue">写数据</button>
+<button size="mini" bindtap="closeBLEConnection">断开连接</button>
+
+
+<view>
+特性UUID: {{item.uuid}}</view>
+<view>特性值: {{item.value}}</view>
